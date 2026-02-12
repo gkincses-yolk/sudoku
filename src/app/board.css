@@ -1,0 +1,51 @@
+:host {
+    --content-padding: 10px;
+}
+header {
+    display: block;
+    height: 60px;
+    padding: var(--content-padding);
+    box-shadow: 0 5px 25px var(--shadow-color);
+}
+.main-table {
+    border-collapse: collapse;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.main-board {
+    border: 2px solid black;
+    color: black;
+}
+tr {
+    font-family: Consolas,Menlo,"courier new",monospace;
+    font-size: 36px;
+}
+span {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #2020E6;
+}
+.cell {
+}
+.odd {
+    background: white;
+}
+.even {
+    background: #eeffee;
+}
+.block {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+.top {
+}
+.middle {
+}
+.bottom {
+}
+.row {
+}
