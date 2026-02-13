@@ -16,17 +16,7 @@ export class Board {
   sudokuService: SudokuService = inject(SudokuService);
 
   board: ISudokuBoard = {
-    _blocks: [
-      { _cells: ["x", "", "", "", "", "", "", "", ""], },
-      { _cells: ["", "", "", "", "", "", "", "", ""], },
-      { _cells: ["", "", "", "", "", "", "", "", ""], },
-      { _cells: ["", "", "", "", "", "", "", "", ""], },
-      { _cells: ["", "", "", "", "y", "", "", "", ""], },
-      { _cells: ["", "", "", "", "", "", "", "", ""], },
-      { _cells: ["", "", "", "", "", "", "", "", ""], },
-      { _cells: ["", "", "", "", "", "", "", "", ""], },
-      { _cells: ["", "", "", "", "", "", "", "", "z"], },
-    ],
+    _blocks: Array(9).fill({ _cells: Array(9).fill(""), }),
   };
 
   printvalue(board: ISudokuBoard, ix: number) {
