@@ -17,8 +17,7 @@ header {
     color: black;
 }
 tr {
-    font-family: Consolas,Menlo,"courier new",monospace;
-    font-size: 36px;
+    font-size: 42px;
 }
 span {
     width: 50px;
@@ -26,20 +25,20 @@ span {
     display: grid;
     justify-items: center;
     align-items: center;
-    padding: 10px;
-    border: 1px solid #2020E6;
+    padding: 5px;
+    border: 1px solid #80c680;
 }
 .cell {
+}
+.block {
+    border: 2px solid black;
+    border-collapse: collapse;
 }
 .odd {
     background: white;
 }
 .even {
-    background: #eeffee;
-}
-.block {
-    border: 2px solid black;
-    border-collapse: collapse;
+    background: #ccf8f8;
 }
 .top {
 }

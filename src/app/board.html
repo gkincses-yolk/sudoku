@@ -1,139 +1,188 @@
 <main>
-<!--    <a [routerLink]="['/']">-->
-<!--        <header class="brand-name">-->
-<!--            <span>Sudoku Board</span>-->
-<!--        </header>-->
-<!--    </a>-->
-    <table class="main-table">
-        <thead>
-            <tr>
-                <th colspan="9">Board</th>
-            </tr>
-        </thead>
-        <tbody class="main-board">
-            <tr>
-                <td>
-                    <table class="odd block cell">
-                        <tr class="top row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="middle row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="bottom row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                    </table>
-                </td>
-                <td>
-                    <table class="even block cell">
-                        <tr class="top row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="middle row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="bottom row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                    </table>
-                </td>
-                <td>
-                    <table class="odd block cell">
-                        <tr class="top row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="middle row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="bottom row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <table class="even block cell">
-                        <tr class="top row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="middle row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="bottom row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                    </table>
-                </td>
-                <td>
-                    <table class="odd block cell">
-                        <tr class="top row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="middle row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="bottom row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                    </table>
-                </td>
-                <td>
-                    <table class="even block cell">
-                        <tr class="top row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="middle row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="bottom row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <table class="odd block cell">
-                        <tr class="top row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="middle row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="bottom row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                    </table>
-                </td>
-                <td>
-                    <table class="even block cell">
-                        <tr class="top row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="middle row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="bottom row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                    </table>
-                </td>
-                <td>
-                    <table class="odd block cell">
-                        <tr class="top row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="middle row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                        <tr class="bottom row">
-                            <td><span>1</span></td><td><span>2</span></td><td><span>3</span></td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+  <table class="main-table">
+    <thead>
+    <tr>
+      <th colspan="9">{{ title }}</th>
+    </tr>
+    </thead>
+    <tbody class="main-board">
+    <tr>
+      <td>
+        <table class="odd block">
+          <tr class="top row">
+            <td class="cell"><span>{{ board.blockAt(0).cellAt(0) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(0).cellAt(1) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(0).cellAt(2) }}</span></td>
+          </tr>
+          <tr class="middle row">
+            <td class="cell"><span>{{ board.blockAt(0).cellAt(3) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(0).cellAt(4) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(0).cellAt(5) }}</span></td>
+          </tr>
+          <tr class="bottom row">
+            <td class="cell"><span>{{ board.blockAt(0).cellAt(6) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(0).cellAt(7) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(0).cellAt(8) }}</span></td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table class="even block">
+          <tr class="top row">
+            <td class="cell"><span>{{ board.blockAt(1).cellAt(0) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(1).cellAt(1) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(1).cellAt(2) }}</span></td>
+          </tr>
+          <tr class="middle row">
+            <td class="cell"><span>{{ board.blockAt(1).cellAt(3) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(1).cellAt(4) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(1).cellAt(5) }}</span></td>
+          </tr>
+          <tr class="bottom row">
+            <td class="cell"><span>{{ board.blockAt(1).cellAt(6) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(1).cellAt(7) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(1).cellAt(8) }}</span></td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table class="odd block">
+          <tr class="top row">
+            <td class="cell"><span>{{ board.blockAt(2).cellAt(0) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(2).cellAt(1) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(2).cellAt(2) }}</span></td>
+          </tr>
+          <tr class="middle row">
+            <td class="cell"><span>{{ board.blockAt(2).cellAt(3) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(2).cellAt(4) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(2).cellAt(5) }}</span></td>
+          </tr>
+          <tr class="bottom row">
+            <td class="cell"><span>{{ board.blockAt(2).cellAt(6) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(2).cellAt(7) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(2).cellAt(8) }}</span></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table class="even block">
+          <tr class="top row">
+            <td class="cell"><span>{{ board.blockAt(3).cellAt(0) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(3).cellAt(1) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(3).cellAt(2) }}</span></td>
+          </tr>
+          <tr class="middle row">
+            <td class="cell"><span>{{ board.blockAt(3).cellAt(3) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(3).cellAt(4) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(3).cellAt(5) }}</span></td>
+          </tr>
+          <tr class="bottom row">
+            <td class="cell"><span>{{ board.blockAt(3).cellAt(6) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(3).cellAt(7) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(3).cellAt(8) }}</span></td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table class="odd block">
+          <tr class="top row">
+            <td class="cell"><span>{{ board.blockAt(4).cellAt(0) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(4).cellAt(1) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(4).cellAt(2) }}</span></td>
+          </tr>
+          <tr class="middle row">
+            <td class="cell"><span>{{ board.blockAt(4).cellAt(3) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(4).cellAt(4) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(4).cellAt(5) }}</span></td>
+          </tr>
+          <tr class="bottom row">
+            <td class="cell"><span>{{ board.blockAt(4).cellAt(6) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(4).cellAt(7) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(4).cellAt(8) }}</span></td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table class="even block">
+          <tr class="top row">
+            <td class="cell"><span>{{ board.blockAt(5).cellAt(0) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(5).cellAt(1) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(5).cellAt(2) }}</span></td>
+          </tr>
+          <tr class="middle row">
+            <td class="cell"><span>{{ board.blockAt(5).cellAt(3) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(5).cellAt(4) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(5).cellAt(5) }}</span></td>
+          </tr>
+          <tr class="bottom row">
+            <td class="cell"><span>{{ board.blockAt(5).cellAt(6) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(5).cellAt(7) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(5).cellAt(8) }}</span></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table class="odd block">
+          <tr class="top row">
+            <td class="cell"><span>{{ board.blockAt(6).cellAt(0) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(6).cellAt(1) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(6).cellAt(2) }}</span></td>
+          </tr>
+          <tr class="middle row">
+            <td class="cell"><span>{{ board.blockAt(6).cellAt(3) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(6).cellAt(4) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(6).cellAt(5) }}</span></td>
+          </tr>
+          <tr class="bottom row">
+            <td class="cell"><span>{{ board.blockAt(6).cellAt(6) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(6).cellAt(7) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(6).cellAt(8) }}</span></td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table class="even block">
+          <tr class="top row">
+            <td class="cell"><span>{{ board.blockAt(7).cellAt(0) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(7).cellAt(1) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(7).cellAt(2) }}</span></td>
+          </tr>
+          <tr class="middle row">
+            <td class="cell"><span>{{ board.blockAt(7).cellAt(3) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(7).cellAt(4) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(7).cellAt(5) }}</span></td>
+          </tr>
+          <tr class="bottom row">
+            <td class="cell"><span>{{ board.blockAt(7).cellAt(6) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(7).cellAt(7) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(7).cellAt(8) }}</span></td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table class="odd block">
+          <tr class="top row">
+            <td class="cell"><span>{{ board.blockAt(8).cellAt(0) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(8).cellAt(1) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(8).cellAt(2) }}</span></td>
+          </tr>
+          <tr class="middle row">
+            <td class="cell"><span>{{ board.blockAt(8).cellAt(3) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(8).cellAt(4) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(8).cellAt(5) }}</span></td>
+          </tr>
+          <tr class="bottom row">
+            <td class="cell"><span>{{ board.blockAt(8).cellAt(6) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(8).cellAt(7) }}</span></td>
+            <td class="cell"><span>{{ board.blockAt(8).cellAt(8) }}</span></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </main>

@@ -10,8 +10,8 @@
   --shadow-color: #E8E8E8;
 }
 body {
-  font-family: 'Be Vietnam Pro', sans-serif;
-  background-color: #77a077;
+  font-family: Consolas,Menlo,"courier new",monospace;
+  background-color: #77c0c0;
   color: whitesmoke;
   margin-left: 10%;
   margin-right: 10%;
