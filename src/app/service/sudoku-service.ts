@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {ISudokuBoard} from '../i-sudoku-block';
-import {SudokuBlock, SudokuBoard} from "../board";
 
 @Injectable({
   providedIn: 'root',
@@ -10,11 +9,16 @@ export class SudokuService {
 
   url = 'http://localhost:3000/blocks';
 
+  emptyBoard: ISudokuBoard = {
+    _size: 9,
+    _blocks: Array(9).fill({ _size: 9, _cells: ["", "", "", "", "", "", "", "", ""] }),
+  };
+
   async getBoard(): Promise<ISudokuBoard> {
     const response = await fetch(this.url);
     if (!response.ok) {
       console.log(`Failed to fetch blocks: ${response.status}`);
-      return new SudokuBoard([]);
+      return this.emptyBoard
     }
     const board: void | ISudokuBoard = await response.json().then(
         (jsonData) => {
@@ -22,17 +26,22 @@ export class SudokuService {
           const board: ISudokuBoard = jsonData.map((blockData: any) => {
             console.log(`Processing block data: ${JSON.stringify(blockData)}`);
             if (blockData && blockData.cells && Array.isArray(blockData.cells)) {
-              return new SudokuBlock(blockData.cells);
+              return this.emptyBoard;
             } else {
               console.warn(`Invalid block data: ${JSON.stringify(blockData)}`);
-              return new SudokuBlock(["", "", "", "", "", "", "", "", ""]);
+              return {
+                _size: 9,
+                _cells: ["", "", "", "", "", "", "", "", ""],
+              };
             }
           });
+          console.log(typeof board);
+          // console.log(typeof board._blocks[0]);
           console.log(JSON.stringify(board));
-          console.log(JSON.stringify((<ISudokuBoard>board).blockAt(0)));
+          // console.log(JSON.stringify(board._blocks[0]));
           return board;
         }
     )
-    return board ?? new SudokuBoard([]);
+    return board ?? this.emptyBoard;
   }
 }

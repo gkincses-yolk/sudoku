@@ -1,9 +1,9 @@
 export interface ISudokuBlock {
-    cells: () => string[];
-    cellAt: (index: number) => string;
+    _size: number;
+    _cells: string[];
 }
 
 export interface ISudokuBoard {
-    blocks: () => ISudokuBlock[];
-    blockAt: (index: number) => ISudokuBlock;
+    _size: number;
+    _blocks: ISudokuBlock[];
 }
