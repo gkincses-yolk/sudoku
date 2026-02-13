@@ -16,17 +16,16 @@ export class Board {
   sudokuService: SudokuService = inject(SudokuService);
 
   board: ISudokuBoard = {
-    _size: 9,
     _blocks: [
-      { _size: 9, _cells: ["x", "", "", "", "", "", "", "", ""]},
-      { _size: 9, _cells: ["", "", "", "", "", "", "", "", ""]},
-      { _size: 9, _cells: ["", "", "", "", "", "", "", "", ""]},
-      { _size: 9, _cells: ["", "", "", "", "", "", "", "", ""]},
-      { _size: 9, _cells: ["", "", "", "", "y", "", "", "", ""]},
-      { _size: 9, _cells: ["", "", "", "", "", "", "", "", ""]},
-      { _size: 9, _cells: ["", "", "", "", "", "", "", "", ""]},
-      { _size: 9, _cells: ["", "", "", "", "", "", "", "", ""]},
-      { _size: 9, _cells: ["", "", "", "", "", "", "", "", "z"]},
+      { _cells: ["x", "", "", "", "", "", "", "", ""], },
+      { _cells: ["", "", "", "", "", "", "", "", ""], },
+      { _cells: ["", "", "", "", "", "", "", "", ""], },
+      { _cells: ["", "", "", "", "", "", "", "", ""], },
+      { _cells: ["", "", "", "", "y", "", "", "", ""], },
+      { _cells: ["", "", "", "", "", "", "", "", ""], },
+      { _cells: ["", "", "", "", "", "", "", "", ""], },
+      { _cells: ["", "", "", "", "", "", "", "", ""], },
+      { _cells: ["", "", "", "", "", "", "", "", "z"], },
     ],
   };
 
@@ -37,15 +36,7 @@ export class Board {
   constructor() {
     this.sudokuService.getBoard()
         .then((board: ISudokuBoard) => {
-          console.log(typeof board);
-          console.log(typeof board._blocks[0]);
-          for (let ix = 0; ix < 9; ix++) {
-            this.printvalue(board, ix);
-          }
-
           this.board = board;
-          console.log(typeof this.board);
-          console.log(typeof this.board._blocks[0]);
           for (let ix = 0; ix < 9; ix++) {
             this.printvalue(this.board, ix);
           }

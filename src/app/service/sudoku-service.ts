@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {ISudokuBoard} from '../i-sudoku-block';
+import {ISudokuBlock, ISudokuBoard} from '../i-sudoku-block';
 
 @Injectable({
   providedIn: 'root',
@@ -9,39 +9,38 @@ export class SudokuService {
 
   url = 'http://localhost:3000/blocks';
 
+  emptyBlock: ISudokuBlock = {
+    _cells: Array(9).fill(""),
+  };
+
   emptyBoard: ISudokuBoard = {
-    _size: 9,
-    _blocks: Array(9).fill({ _size: 9, _cells: ["", "", "", "", "", "", "", "", ""] }),
+    _blocks: Array(9).fill(this.emptyBlock),
   };
 
   async getBoard(): Promise<ISudokuBoard> {
     const response = await fetch(this.url);
     if (!response.ok) {
-      console.log(`Failed to fetch blocks: ${response.status}`);
-      return this.emptyBoard
+      console.log(`Failed to fetch board: ${response.status}`);
+      return this.emptyBoard;
     }
-    const board: void | ISudokuBoard = await response.json().then(
+    const board: ISudokuBoard = await response.json().then(
         (jsonData) => {
           console.log(`Fetched board data: ${JSON.stringify(jsonData)}`);
-          const board: ISudokuBoard = jsonData.map((blockData: any) => {
-            console.log(`Processing block data: ${JSON.stringify(blockData)}`);
-            if (blockData && blockData.cells && Array.isArray(blockData.cells)) {
-              return this.emptyBoard;
-            } else {
-              console.warn(`Invalid block data: ${JSON.stringify(blockData)}`);
-              return {
-                _size: 9,
-                _cells: ["", "", "", "", "", "", "", "", ""],
-              };
-            }
-          });
-          console.log(typeof board);
-          // console.log(typeof board._blocks[0]);
-          console.log(JSON.stringify(board));
-          // console.log(JSON.stringify(board._blocks[0]));
+          const board: ISudokuBoard = {
+            _blocks: jsonData.map(
+                (blockData: any) => {
+                  console.log(`Processing block data: ${JSON.stringify(blockData)}`);
+                  if (blockData && blockData.cells && Array.isArray(blockData.cells)) {
+                    return {_cells: blockData.cells,};
+                  } else {
+                    console.warn(`Invalid block data: ${JSON.stringify(blockData)}`);
+                    return this.emptyBlock;
+                  }
+                })
+          };
           return board;
         }
-    )
+    );
     return board ?? this.emptyBoard;
   }
 }
