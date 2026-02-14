@@ -5,6 +5,9 @@ import {Board} from "./model/board";
 import {Block} from "./model/block";
 import {IBlock} from "./model/i-block";
 import {Cell} from "./model/cell";
+import {UnusedCounterService} from "./service/unused-counter.service";
+import {IUnused} from "./model/i-unused";
+import {Unused} from "./model/unused";
 
 @Component({
   selector: 'board',
@@ -18,23 +21,26 @@ export class Game {
 
   private readonly changeDetectorRef = inject(ChangeDetectorRef);
   private readonly sudokuService: SudokuService = inject(SudokuService);
+  private readonly unusedCounterService: UnusedCounterService = inject(UnusedCounterService);
 
   private _ix = 0;
 
   _block: IBlock = new Block(this._ix++, Array(9).fill(new Cell("", true, false)));
   _board: IBoard = new Board(Array(9).fill(this._block));
+  _unusedCounts: IUnused[] = Array(9).fill(new Unused(9));
 
-  printvalue(board: IBoard, ix: number) {
-    console.log(`Fetched block ${ix}: ${JSON.stringify(board.blockAt(ix))}`);
-  }
+  // printvalue(board: IBoard, ix: number) {
+  //   console.log(`Fetched block ${ix}: ${JSON.stringify(board.blockAt(ix))}`);
+  // }
 
   constructor() {
     this.sudokuService.getBoard()
         .then((board: IBoard) => {
           this._board = board;
           for (let ix = 0; ix < 9; ix++) {
-            this.printvalue(this._board, ix);
+            // this.printvalue(this._board, ix);
           }
+          this._unusedCounts = this.unusedCounterService.countUnusedNumbers(this._board);
           this.changeDetectorRef.markForCheck();
         })
   }

@@ -12,10 +12,10 @@ import {ICell} from "../model/i-cell";
 
 export class SudokuService {
 
-  _url = 'http://localhost:3000/blocks';
-  _emptyBlock: IBlock = new Block(0, Array(9).fill(""));
-  _emptyBoard: IBoard = new Board(Array(9).fill(this._emptyBlock));
-  _emptyCell: ICell = new Cell("", true, false);
+  private readonly _url = 'http://localhost:3000/blocks';
+  private readonly _emptyCell: ICell = new Cell("", true, false);
+  private readonly _emptyBlock: IBlock = new Block(0, Array(9).fill(this._emptyCell));
+  private readonly _emptyBoard: IBoard = new Board(Array(9).fill(this._emptyBlock));
 
   async getBoard(): Promise<IBoard> {
     const response = await fetch(this._url);
@@ -26,11 +26,11 @@ export class SudokuService {
     const board: IBoard = await response.json().then(
         (jsonData) => {
           let ix = 0;
-          console.log(`Fetched board data: ${JSON.stringify(jsonData)}`);
+          // console.log(`Fetched board data: ${JSON.stringify(jsonData)}`);
           return new Board(
               jsonData.map(
                   (blockData: any) => {
-                    console.log(`Processing block data: ${JSON.stringify(blockData)}`);
+                    // console.log(`Processing block data: ${JSON.stringify(blockData)}`);
                     if (blockData && blockData.cells && Array.isArray(blockData.cells)) {
                       return new Block(ix++,
                           blockData.cells.map(
