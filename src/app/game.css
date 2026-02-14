@@ -41,7 +41,7 @@ span {
     background: white;
 }
 .even {
-    background: #ccf8f8;
+    background: #e0f1f1;
 }
 .top {
 }
@@ -50,4 +50,14 @@ span {
 .bottom {
 }
 .row {
+}
+.filled-highlight {
+    color: #6186ee;
+    background-color: yellow;
+}
+.filled {
+    color: #4a0c4a;
+}
+.highlight {
+    background-color: yellow;
 }

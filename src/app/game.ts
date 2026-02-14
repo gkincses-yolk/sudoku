@@ -4,6 +4,7 @@ import {IBoard} from './model/i-board';
 import {Board} from "./model/board";
 import {Block} from "./model/block";
 import {IBlock} from "./model/i-block";
+import {Cell} from "./model/cell";
 
 @Component({
   selector: 'board',
@@ -20,7 +21,7 @@ export class Game {
 
   private _ix = 0;
 
-  _block: IBlock = new Block(this._ix++, Array(9).fill(""));
+  _block: IBlock = new Block(this._ix++, Array(9).fill(new Cell("", true, false)));
   _board: IBoard = new Board(Array(9).fill(this._block));
 
   printvalue(board: IBoard, ix: number) {

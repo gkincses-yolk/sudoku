@@ -1,20 +1,21 @@
 import {IBlock} from "./i-block";
+import {ICell} from "./i-cell";
 
 export class Block implements IBlock {
   private readonly _ix: number = 0;
-  private readonly _cells: string[] = [];
+  private readonly _cells: ICell[] = [];
 
-  constructor(ix: number, cells: string[]) {
+  constructor(ix: number, cells: ICell[]) {
     this._ix = ix;
     this._cells = cells;
   }
 
-  cells(): string[] {
+  cells(): ICell[] {
     return this._cells;
   }
 
-  cellAt(ix: number): string {
-    return  this._cells[ix];
+  cellAt(ix: number): ICell {
+    return this._cells[ix];
   }
 
   ix(): number {

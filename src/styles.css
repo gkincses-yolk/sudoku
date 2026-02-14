@@ -11,6 +11,7 @@
 }
 body {
   font-family: Consolas,Menlo,"courier new",monospace;
+  font-weight: normal;
   background-color: #77c0c0;
   color: whitesmoke;
   margin-left: 10%;
