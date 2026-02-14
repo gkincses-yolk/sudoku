@@ -7,6 +7,9 @@ header {
     padding: var(--content-padding);
     box-shadow: 0 5px 25px var(--shadow-color);
 }
+.title {
+    color: var(--primary-color);
+}
 .main-table {
     border-collapse: collapse;
     margin-left: 10%;

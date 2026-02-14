@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { Board } from './board';
+import { Game } from './game';
 
 const routeConfig: Routes = [
     {
         path: '',
-        component: Board,
-        title: 'Sudoku Board Page',
+        component: Game,
+        title: 'Sudoku Game Page',
     },
 ];
 

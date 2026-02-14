@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
-import {ISudokuBlock, ISudokuBoard} from '../i-sudoku-block';
+import {Block} from "../model/block";
+import {Board} from "../model/board";
+import {IBoard} from "../model/i-board";
 
 @Injectable({
   providedIn: 'root',
@@ -7,40 +9,33 @@ import {ISudokuBlock, ISudokuBoard} from '../i-sudoku-block';
 
 export class SudokuService {
 
-  url = 'http://localhost:3000/blocks';
+  _url = 'http://localhost:3000/blocks';
+  _emptyBlock: Block = new Block(0, Array(9).fill(""));
+  _emptyBoard: Board = new Board(Array(9).fill(this._emptyBlock));
 
-  emptyBlock: ISudokuBlock = {
-    _cells: Array(9).fill(""),
-  };
-
-  emptyBoard: ISudokuBoard = {
-    _blocks: Array(9).fill(this.emptyBlock),
-  };
-
-  async getBoard(): Promise<ISudokuBoard> {
-    const response = await fetch(this.url);
+  async getBoard(): Promise<IBoard> {
+    const response = await fetch(this._url);
     if (!response.ok) {
       console.log(`Failed to fetch board: ${response.status}`);
-      return this.emptyBoard;
+      return this._emptyBoard;
     }
-    const board: ISudokuBoard = await response.json().then(
+    const board: IBoard = await response.json().then(
         (jsonData) => {
+          let ix = 0;
           console.log(`Fetched board data: ${JSON.stringify(jsonData)}`);
-          const board: ISudokuBoard = {
-            _blocks: jsonData.map(
-                (blockData: any) => {
-                  console.log(`Processing block data: ${JSON.stringify(blockData)}`);
-                  if (blockData && blockData.cells && Array.isArray(blockData.cells)) {
-                    return {_cells: blockData.cells,};
-                  } else {
-                    console.warn(`Invalid block data: ${JSON.stringify(blockData)}`);
-                    return this.emptyBlock;
-                  }
-                })
-          };
-          return board;
+          return new Board(
+              jsonData.map(
+                  (blockData: any) => {
+                    console.log(`Processing block data: ${JSON.stringify(blockData)}`);
+                    if (blockData && blockData.cells && Array.isArray(blockData.cells)) {
+                      return new Block(ix++, blockData.cells);
+                    } else {
+                      console.warn(`Invalid block data: ${JSON.stringify(blockData)}`);
+                      return this._emptyBlock;
+                    }
+                  }));
         }
     );
-    return board ?? this.emptyBoard;
+    return board ?? this._emptyBoard;
   }
 }
