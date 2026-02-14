@@ -12,7 +12,7 @@ import {ICell} from "../model/i-cell";
 
 export class SudokuService {
 
-  private readonly _url = 'http://localhost:3000/blocks';
+  private readonly _url = 'http://localhost:3000/board';
   private readonly _emptyCell: ICell = new Cell("", true, false);
   private readonly _emptyBlock: IBlock = new Block(0, Array(9).fill(this._emptyCell));
   private readonly _emptyBoard: IBoard = new Board(Array(9).fill(this._emptyBlock));
@@ -25,12 +25,11 @@ export class SudokuService {
     }
     const board: IBoard = await response.json().then(
         (jsonData) => {
+          console.log(`Fetched json: ${JSON.stringify(jsonData)}`);
           let ix = 0;
-          // console.log(`Fetched board data: ${JSON.stringify(jsonData)}`);
           return new Board(
-              jsonData.map(
+              jsonData.blocks?.map(
                   (blockData: any) => {
-                    // console.log(`Processing block data: ${JSON.stringify(blockData)}`);
                     if (blockData && blockData.cells && Array.isArray(blockData.cells)) {
                       return new Block(ix++,
                           blockData.cells.map(

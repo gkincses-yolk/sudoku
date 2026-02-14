@@ -29,17 +29,10 @@ export class Game {
   _board: IBoard = new Board(Array(9).fill(this._block));
   _unusedCounts: IUnused[] = Array(9).fill(new Unused(9));
 
-  // printvalue(board: IBoard, ix: number) {
-  //   console.log(`Fetched block ${ix}: ${JSON.stringify(board.blockAt(ix))}`);
-  // }
-
   constructor() {
     this.sudokuService.getBoard()
         .then((board: IBoard) => {
           this._board = board;
-          for (let ix = 0; ix < 9; ix++) {
-            // this.printvalue(this._board, ix);
-          }
           this._unusedCounts = this.unusedCounterService.countUnusedNumbers(this._board);
           this.changeDetectorRef.markForCheck();
         })
