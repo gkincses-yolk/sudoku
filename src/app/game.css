@@ -57,6 +57,10 @@ span {
 }
 .row {
 }
+.error {
+    color: darkred;
+    background-color: orange;
+}
 .filled-highlight {
     color: #6186ee;
     background-color: yellow;
@@ -71,6 +75,9 @@ span {
     font-size: 56px;
     continue: overflow;
     display: inline-block;
+}
+.selected {
+    color: white;
 }
 .any-unused {
     color: aquamarine;

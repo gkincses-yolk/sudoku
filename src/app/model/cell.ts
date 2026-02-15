@@ -1,14 +1,14 @@
 import {ICell} from "./i-cell";
 
 export class Cell implements ICell {
-  private readonly _value: string = "";
-  private readonly _orig: boolean = false;
-  private readonly _highlight: boolean = false;
+  private _value: string = "";
+  private _orig: boolean = false;
+  private _highlight: boolean = false;
+  private _error: boolean = false;
 
-  constructor(value: string, orig: boolean, highlight: boolean) {
+  constructor(value: string, orig: boolean) {
     this._value = value;
     this._orig = orig;
-    this._highlight = highlight;
   }
 
   value(): string {
@@ -20,16 +20,31 @@ export class Cell implements ICell {
   highlight(): boolean {
     return this._highlight;
   }
+  setHighlight() {
+    this._highlight = true;
+  }
+  clearHighlight() {
+    this._highlight = false;
+  }
+  setError() {
+    this._error = true;
+  }
+  clearError() {
+    this._error = false;
+  }
   display(): string {
-    if (!this._orig && this._highlight) {
-      return "filled-highlight";
+    if (this._error) {
+      return 'error';
     }
-    let clazz = "";
+    if (!this._orig && this._highlight) {
+      return 'filled-highlight';
+    }
+    let clazz = '';
     if (!this._orig) {
-      clazz += "filled ";
+      clazz += 'filled ';
     }
     if (this.highlight()) {
-      clazz += "highlight ";
+      clazz += 'highlight ';
     }
     return clazz;
   }

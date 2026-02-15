@@ -13,7 +13,7 @@ import {ICell} from "../model/i-cell";
 export class SudokuService {
 
   private readonly _url = 'http://localhost:3000/board';
-  private readonly _emptyCell: ICell = new Cell("", true, false);
+  private readonly _emptyCell: ICell = new Cell("", true);
   private readonly _emptyBlock: IBlock = new Block(0, Array(9).fill(this._emptyCell));
   private readonly _emptyBoard: IBoard = new Board(Array(9).fill(this._emptyBlock));
 
@@ -35,7 +35,7 @@ export class SudokuService {
                           blockData.cells.map(
                               (cellData: any) => {
                                 if (cellData && cellData.value) {
-                                  return new Cell(cellData.value, cellData.orig, cellData.highlight);
+                                  return new Cell(cellData.value, cellData.orig);
                                 } else {
                                   return this._emptyCell;
                                 }
@@ -49,5 +49,10 @@ export class SudokuService {
         }
     );
     return board ?? this._emptyBoard;
+  }
+
+  fillCell(blockIx: number, cellIx: number): boolean {
+    console.log(`Ouch ${blockIx}:${cellIx}`);
+    return false;
   }
 }

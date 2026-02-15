@@ -10,57 +10,57 @@
       <td>
         <table class="odd block">
           <tr class="top row">
-            <td class="cell"><span class="{{ _board.blockAt(0).cellAt(0).display() }}">{{ _board.blockAt(0).cellAt(0).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(0).cellAt(1).display() }}">{{ _board.blockAt(0).cellAt(1).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(0).cellAt(2).display() }}">{{ _board.blockAt(0).cellAt(2).value() }}</span></td>
+            <td class="cell" (click)="fill(0, 0)"><span class="{{ display(0, 0) }}">{{ value(0, 0) }}</span></td>
+            <td class="cell" (click)="fill(0, 1)"><span class="{{ display(0, 1) }}">{{ value(0, 1) }}</span></td>
+            <td class="cell" (click)="fill(0, 2)"><span class="{{ display(0, 2) }}">{{ value(0, 2) }}</span></td>
           </tr>
           <tr class="middle row">
-            <td class="cell"><span class="{{ _board.blockAt(0).cellAt(3).display() }}">{{ _board.blockAt(0).cellAt(3).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(0).cellAt(4).display() }}">{{ _board.blockAt(0).cellAt(4).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(0).cellAt(5).display() }}">{{ _board.blockAt(0).cellAt(5).value() }}</span></td>
+            <td class="cell" (click)="fill(0, 3)"><span class="{{ display(0, 3) }}">{{ value(0, 3) }}</span></td>
+            <td class="cell" (click)="fill(0, 4)"><span class="{{ display(0, 4) }}">{{ value(0, 4) }}</span></td>
+            <td class="cell" (click)="fill(0, 5)"><span class="{{ display(0, 5) }}">{{ value(0, 5) }}</span></td>
           </tr>
           <tr class="bottom row">
-            <td class="cell"><span class="{{ _board.blockAt(0).cellAt(6).display() }}">{{ _board.blockAt(0).cellAt(6).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(0).cellAt(7).display() }}">{{ _board.blockAt(0).cellAt(7).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(0).cellAt(8).display() }}">{{ _board.blockAt(0).cellAt(8).value() }}</span></td>
+            <td class="cell" (click)="fill(0, 6)"><span class="{{ display(0, 6) }}">{{ value(0, 6) }}</span></td>
+            <td class="cell" (click)="fill(0, 7)"><span class="{{ display(0, 7) }}">{{ value(0, 7) }}</span></td>
+            <td class="cell" (click)="fill(0, 8)"><span class="{{ display(0, 8) }}">{{ value(0, 8) }}</span></td>
           </tr>
         </table>
       </td>
       <td>
         <table class="even block">
           <tr class="top row">
-            <td class="cell"><span class="{{ _board.blockAt(1).cellAt(0).display() }}">{{ _board.blockAt(1).cellAt(0).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(1).cellAt(1).display() }}">{{ _board.blockAt(1).cellAt(1).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(1).cellAt(2).display() }}">{{ _board.blockAt(1).cellAt(2).value() }}</span></td>
+            <td class="cell" (click)="fill(1, 0)"><span class="{{ display(1, 0) }}">{{ value(1, 0) }}</span></td>
+            <td class="cell" (click)="fill(1, 1)"><span class="{{ display(1, 1) }}">{{ value(1, 1) }}</span></td>
+            <td class="cell" (click)="fill(1, 2)"><span class="{{ display(1, 2) }}">{{ value(1, 2) }}</span></td>
           </tr>
           <tr class="middle row">
-            <td class="cell"><span class="{{ _board.blockAt(1).cellAt(3).display() }}">{{ _board.blockAt(1).cellAt(3).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(1).cellAt(4).display() }}">{{ _board.blockAt(1).cellAt(4).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(1).cellAt(5).display() }}">{{ _board.blockAt(1).cellAt(5).value() }}</span></td>
+            <td class="cell" (click)="fill(1, 3)"><span class="{{ display(1, 3) }}">{{ value(1, 3) }}</span></td>
+            <td class="cell" (click)="fill(1, 4)"><span class="{{ display(1, 4) }}">{{ value(1, 4) }}</span></td>
+            <td class="cell" (click)="fill(1, 5)"><span class="{{ display(1, 5) }}">{{ value(1, 5) }}</span></td>
           </tr>
           <tr class="bottom row">
-            <td class="cell"><span class="{{ _board.blockAt(1).cellAt(6).display() }}">{{ _board.blockAt(1).cellAt(6).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(1).cellAt(7).display() }}">{{ _board.blockAt(1).cellAt(7).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(1).cellAt(8).display() }}">{{ _board.blockAt(1).cellAt(8).value() }}</span></td>
+            <td class="cell" (click)="fill(1, 6)"><span class="{{ display(1, 6) }}">{{ value(1, 6) }}</span></td>
+            <td class="cell" (click)="fill(1, 7)"><span class="{{ display(1, 7) }}">{{ value(1, 7) }}</span></td>
+            <td class="cell" (click)="fill(1, 8)"><span class="{{ display(1, 8) }}">{{ value(1, 8) }}</span></td>
           </tr>
         </table>
       </td>
       <td>
         <table class="odd block">
           <tr class="top row">
-            <td class="cell"><span class="{{ _board.blockAt(2).cellAt(0).display() }}">{{ _board.blockAt(2).cellAt(0).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(2).cellAt(1).display() }}">{{ _board.blockAt(2).cellAt(1).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(2).cellAt(2).display() }}">{{ _board.blockAt(2).cellAt(2).value() }}</span></td>
+            <td class="cell" (click)="fill(2, 0)"><span class="{{ display(2, 0) }}">{{ value(2, 0) }}</span></td>
+            <td class="cell" (click)="fill(2, 1)"><span class="{{ display(2, 1) }}">{{ value(2, 1) }}</span></td>
+            <td class="cell" (click)="fill(2, 2)"><span class="{{ display(2, 2) }}">{{ value(2, 2) }}</span></td>
           </tr>
           <tr class="middle row">
-            <td class="cell"><span class="{{ _board.blockAt(2).cellAt(3).display() }}">{{ _board.blockAt(2).cellAt(3).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(2).cellAt(4).display() }}">{{ _board.blockAt(2).cellAt(4).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(2).cellAt(5).display() }}">{{ _board.blockAt(2).cellAt(5).value() }}</span></td>
+            <td class="cell" (click)="fill(2, 3)"><span class="{{ display(2, 3) }}">{{ value(2, 3) }}</span></td>
+            <td class="cell" (click)="fill(2, 4)"><span class="{{ display(2, 4) }}">{{ value(2, 4) }}</span></td>
+            <td class="cell" (click)="fill(2, 5)"><span class="{{ display(2, 5) }}">{{ value(2, 5) }}</span></td>
           </tr>
           <tr class="bottom row">
-            <td class="cell"><span class="{{ _board.blockAt(2).cellAt(6).display() }}">{{ _board.blockAt(2).cellAt(6).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(2).cellAt(7).display() }}">{{ _board.blockAt(2).cellAt(7).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(2).cellAt(8).display() }}">{{ _board.blockAt(2).cellAt(8).value() }}</span></td>
+            <td class="cell" (click)="fill(2, 6)"><span class="{{ display(2, 6) }}">{{ value(2, 6) }}</span></td>
+            <td class="cell" (click)="fill(2, 7)"><span class="{{ display(2, 7) }}">{{ value(2, 7) }}</span></td>
+            <td class="cell" (click)="fill(2, 8)"><span class="{{ display(2, 8) }}">{{ value(2, 8) }}</span></td>
           </tr>
         </table>
       </td>
@@ -69,57 +69,57 @@
       <td>
         <table class="even block">
           <tr class="top row">
-            <td class="cell"><span class="{{ _board.blockAt(3).cellAt(0).display() }}">{{ _board.blockAt(3).cellAt(0).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(3).cellAt(1).display() }}">{{ _board.blockAt(3).cellAt(1).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(3).cellAt(2).display() }}">{{ _board.blockAt(3).cellAt(2).value() }}</span></td>
+            <td class="cell" (click)="fill(3, 0)"><span class="{{ display(3, 0) }}">{{ value(3, 0) }}</span></td>
+            <td class="cell" (click)="fill(3, 1)"><span class="{{ display(3, 1) }}">{{ value(3, 1) }}</span></td>
+            <td class="cell" (click)="fill(3, 2)"><span class="{{ display(3, 2) }}">{{ value(3, 2) }}</span></td>
           </tr>
           <tr class="middle row">
-            <td class="cell"><span class="{{ _board.blockAt(3).cellAt(3).display() }}">{{ _board.blockAt(3).cellAt(3).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(3).cellAt(4).display() }}">{{ _board.blockAt(3).cellAt(4).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(3).cellAt(5).display() }}">{{ _board.blockAt(3).cellAt(5).value() }}</span></td>
+            <td class="cell" (click)="fill(3, 3)"><span class="{{ display(3, 3) }}">{{ value(3, 3) }}</span></td>
+            <td class="cell" (click)="fill(3, 4)"><span class="{{ display(3, 4) }}">{{ value(3, 4) }}</span></td>
+            <td class="cell" (click)="fill(3, 5)"><span class="{{ display(3, 5) }}">{{ value(3, 5) }}</span></td>
           </tr>
           <tr class="bottom row">
-            <td class="cell"><span class="{{ _board.blockAt(3).cellAt(6).display() }}">{{ _board.blockAt(3).cellAt(6).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(3).cellAt(7).display() }}">{{ _board.blockAt(3).cellAt(7).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(3).cellAt(8).display() }}">{{ _board.blockAt(3).cellAt(8).value() }}</span></td>
+            <td class="cell" (click)="fill(3, 6)"><span class="{{ display(3, 6) }}">{{ value(3, 6) }}</span></td>
+            <td class="cell" (click)="fill(3, 7)"><span class="{{ display(3, 7) }}">{{ value(3, 7) }}</span></td>
+            <td class="cell" (click)="fill(3, 8)"><span class="{{ display(3, 8) }}">{{ value(3, 8) }}</span></td>
           </tr>
         </table>
       </td>
       <td>
         <table class="odd block">
           <tr class="top row">
-            <td class="cell"><span class="{{ _board.blockAt(4).cellAt(0).display() }}">{{ _board.blockAt(4).cellAt(0).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(4).cellAt(1).display() }}">{{ _board.blockAt(4).cellAt(1).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(4).cellAt(2).display() }}">{{ _board.blockAt(4).cellAt(2).value() }}</span></td>
+            <td class="cell" (click)="fill(4, 0)"><span class="{{ display(4, 0) }}">{{ value(4, 0) }}</span></td>
+            <td class="cell" (click)="fill(4, 1)"><span class="{{ display(4, 1) }}">{{ value(4, 1) }}</span></td>
+            <td class="cell" (click)="fill(4, 2)"><span class="{{ display(4, 2) }}">{{ value(4, 2) }}</span></td>
           </tr>
           <tr class="middle row">
-            <td class="cell"><span class="{{ _board.blockAt(4).cellAt(3).display() }}">{{ _board.blockAt(4).cellAt(3).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(4).cellAt(4).display() }}">{{ _board.blockAt(4).cellAt(4).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(4).cellAt(5).display() }}">{{ _board.blockAt(4).cellAt(5).value() }}</span></td>
+            <td class="cell" (click)="fill(4, 3)"><span class="{{ display(4, 3) }}">{{ value(4, 3) }}</span></td>
+            <td class="cell" (click)="fill(4, 4)"><span class="{{ display(4, 4) }}">{{ value(4, 4) }}</span></td>
+            <td class="cell" (click)="fill(4, 5)"><span class="{{ display(4, 5) }}">{{ value(4, 5) }}</span></td>
           </tr>
           <tr class="bottom row">
-            <td class="cell"><span class="{{ _board.blockAt(4).cellAt(6).display() }}">{{ _board.blockAt(4).cellAt(6).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(4).cellAt(7).display() }}">{{ _board.blockAt(4).cellAt(7).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(4).cellAt(8).display() }}">{{ _board.blockAt(4).cellAt(8).value() }}</span></td>
+            <td class="cell" (click)="fill(4, 6)"><span class="{{ display(4, 6) }}">{{ value(4, 6) }}</span></td>
+            <td class="cell" (click)="fill(4, 7)"><span class="{{ display(4, 7) }}">{{ value(4, 7) }}</span></td>
+            <td class="cell" (click)="fill(4, 8)"><span class="{{ display(4, 8) }}">{{ value(4, 8) }}</span></td>
           </tr>
         </table>
       </td>
       <td>
         <table class="even block">
           <tr class="top row">
-            <td class="cell"><span class="{{ _board.blockAt(5).cellAt(0).display() }}">{{ _board.blockAt(5).cellAt(0).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(5).cellAt(1).display() }}">{{ _board.blockAt(5).cellAt(1).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(5).cellAt(2).display() }}">{{ _board.blockAt(5).cellAt(2).value() }}</span></td>
+            <td class="cell" (click)="fill(5, 0)"><span class="{{ display(5, 0) }}">{{ value(5, 0) }}</span></td>
+            <td class="cell" (click)="fill(5, 1)"><span class="{{ display(5, 1) }}">{{ value(5, 1) }}</span></td>
+            <td class="cell" (click)="fill(5, 2)"><span class="{{ display(5, 2) }}">{{ value(5, 2) }}</span></td>
           </tr>
           <tr class="middle row">
-            <td class="cell"><span class="{{ _board.blockAt(5).cellAt(3).display() }}">{{ _board.blockAt(5).cellAt(3).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(5).cellAt(4).display() }}">{{ _board.blockAt(5).cellAt(4).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(5).cellAt(5).display() }}">{{ _board.blockAt(5).cellAt(5).value() }}</span></td>
+            <td class="cell" (click)="fill(5, 3)"><span class="{{ display(5, 3) }}">{{ value(5, 3) }}</span></td>
+            <td class="cell" (click)="fill(5, 4)"><span class="{{ display(5, 4) }}">{{ value(5, 4) }}</span></td>
+            <td class="cell" (click)="fill(5, 5)"><span class="{{ display(5, 5) }}">{{ value(5, 5) }}</span></td>
           </tr>
           <tr class="bottom row">
-            <td class="cell"><span class="{{ _board.blockAt(5).cellAt(6).display() }}">{{ _board.blockAt(5).cellAt(6).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(5).cellAt(7).display() }}">{{ _board.blockAt(5).cellAt(7).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(5).cellAt(8).display() }}">{{ _board.blockAt(5).cellAt(8).value() }}</span></td>
+            <td class="cell" (click)="fill(5, 6)"><span class="{{ display(5, 6) }}">{{ value(5, 6) }}</span></td>
+            <td class="cell" (click)="fill(5, 7)"><span class="{{ display(5, 7) }}">{{ value(5, 7) }}</span></td>
+            <td class="cell" (click)="fill(5, 8)"><span class="{{ display(5, 8) }}">{{ value(5, 8) }}</span></td>
           </tr>
         </table>
       </td>
@@ -128,57 +128,57 @@
       <td>
         <table class="odd block">
           <tr class="top row">
-            <td class="cell"><span class="{{ _board.blockAt(6).cellAt(0).display() }}">{{ _board.blockAt(6).cellAt(0).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(6).cellAt(1).display() }}">{{ _board.blockAt(6).cellAt(1).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(6).cellAt(2).display() }}">{{ _board.blockAt(6).cellAt(2).value() }}</span></td>
+            <td class="cell" (click)="fill(6, 0)"><span class="{{ display(6, 0) }}">{{ value(6, 0) }}</span></td>
+            <td class="cell" (click)="fill(6, 1)"><span class="{{ display(6, 1) }}">{{ value(6, 1) }}</span></td>
+            <td class="cell" (click)="fill(6, 2)"><span class="{{ display(6, 2) }}">{{ value(6, 2) }}</span></td>
           </tr>
           <tr class="middle row">
-            <td class="cell"><span class="{{ _board.blockAt(6).cellAt(3).display() }}">{{ _board.blockAt(6).cellAt(3).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(6).cellAt(4).display() }}">{{ _board.blockAt(6).cellAt(4).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(6).cellAt(5).display() }}">{{ _board.blockAt(6).cellAt(5).value() }}</span></td>
+            <td class="cell" (click)="fill(6, 3)"><span class="{{ display(6, 3) }}">{{ value(6, 3) }}</span></td>
+            <td class="cell" (click)="fill(6, 4)"><span class="{{ display(6, 4) }}">{{ value(6, 4) }}</span></td>
+            <td class="cell" (click)="fill(6, 5)"><span class="{{ display(6, 5) }}">{{ value(6, 5) }}</span></td>
           </tr>
           <tr class="bottom row">
-            <td class="cell"><span class="{{ _board.blockAt(6).cellAt(6).display() }}">{{ _board.blockAt(6).cellAt(6).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(6).cellAt(7).display() }}">{{ _board.blockAt(6).cellAt(7).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(6).cellAt(8).display() }}">{{ _board.blockAt(6).cellAt(8).value() }}</span></td>
+            <td class="cell" (click)="fill(6, 6)"><span class="{{ display(6, 6) }}">{{ value(6, 6) }}</span></td>
+            <td class="cell" (click)="fill(6, 7)"><span class="{{ display(6, 7) }}">{{ value(6, 7) }}</span></td>
+            <td class="cell" (click)="fill(6, 8)"><span class="{{ display(6, 8) }}">{{ value(6, 8) }}</span></td>
           </tr>
         </table>
       </td>
       <td>
         <table class="even block">
           <tr class="top row">
-            <td class="cell"><span class="{{ _board.blockAt(7).cellAt(0).display() }}">{{ _board.blockAt(7).cellAt(0).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(7).cellAt(1).display() }}">{{ _board.blockAt(7).cellAt(1).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(7).cellAt(2).display() }}">{{ _board.blockAt(7).cellAt(2).value() }}</span></td>
+            <td class="cell" (click)="fill(7, 0)"><span class="{{ display(7, 0) }}">{{ value(7, 0) }}</span></td>
+            <td class="cell" (click)="fill(7, 1)"><span class="{{ display(7, 1) }}">{{ value(7, 1) }}</span></td>
+            <td class="cell" (click)="fill(7, 2)"><span class="{{ display(7, 2) }}">{{ value(7, 2) }}</span></td>
           </tr>
           <tr class="middle row">
-            <td class="cell"><span class="{{ _board.blockAt(7).cellAt(3).display() }}">{{ _board.blockAt(7).cellAt(3).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(7).cellAt(4).display() }}">{{ _board.blockAt(7).cellAt(4).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(7).cellAt(5).display() }}">{{ _board.blockAt(7).cellAt(5).value() }}</span></td>
+            <td class="cell" (click)="fill(7, 3)"><span class="{{ display(7, 3) }}">{{ value(7, 3) }}</span></td>
+            <td class="cell" (click)="fill(7, 4)"><span class="{{ display(7, 4) }}">{{ value(7, 4) }}</span></td>
+            <td class="cell" (click)="fill(7, 5)"><span class="{{ display(7, 5) }}">{{ value(7, 5) }}</span></td>
           </tr>
           <tr class="bottom row">
-            <td class="cell"><span class="{{ _board.blockAt(7).cellAt(6).display() }}">{{ _board.blockAt(7).cellAt(6).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(7).cellAt(7).display() }}">{{ _board.blockAt(7).cellAt(7).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(7).cellAt(8).display() }}">{{ _board.blockAt(7).cellAt(8).value() }}</span></td>
+            <td class="cell" (click)="fill(7, 6)"><span class="{{ display(7, 6) }}">{{ value(7, 6) }}</span></td>
+            <td class="cell" (click)="fill(7, 7)"><span class="{{ display(7, 7) }}">{{ value(7, 7) }}</span></td>
+            <td class="cell" (click)="fill(7, 8)"><span class="{{ display(7, 8) }}">{{ value(7, 8) }}</span></td>
           </tr>
         </table>
       </td>
       <td>
         <table class="odd block">
           <tr class="top row">
-            <td class="cell"><span class="{{ _board.blockAt(8).cellAt(0).display() }}">{{ _board.blockAt(8).cellAt(0).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(8).cellAt(1).display() }}">{{ _board.blockAt(8).cellAt(1).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(8).cellAt(2).display() }}">{{ _board.blockAt(8).cellAt(2).value() }}</span></td>
+            <td class="cell" (click)="fill(8, 0)"><span class="{{ display(8, 0) }}">{{ value(8, 0) }}</span></td>
+            <td class="cell" (click)="fill(8, 1)"><span class="{{ display(8, 1) }}">{{ value(8, 1) }}</span></td>
+            <td class="cell" (click)="fill(8, 2)"><span class="{{ display(8, 2) }}">{{ value(8, 2) }}</span></td>
           </tr>
           <tr class="middle row">
-            <td class="cell"><span class="{{ _board.blockAt(8).cellAt(3).display() }}">{{ _board.blockAt(8).cellAt(3).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(8).cellAt(4).display() }}">{{ _board.blockAt(8).cellAt(4).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(8).cellAt(5).display() }}">{{ _board.blockAt(8).cellAt(5).value() }}</span></td>
+            <td class="cell" (click)="fill(8, 3)"><span class="{{ display(8, 3) }}">{{ value(8, 3) }}</span></td>
+            <td class="cell" (click)="fill(8, 4)"><span class="{{ display(8, 4) }}">{{ value(8, 4) }}</span></td>
+            <td class="cell" (click)="fill(8, 5)"><span class="{{ display(8, 5) }}">{{ value(8, 5) }}</span></td>
           </tr>
           <tr class="bottom row">
-            <td class="cell"><span class="{{ _board.blockAt(8).cellAt(6).display() }}">{{ _board.blockAt(8).cellAt(6).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(8).cellAt(7).display() }}">{{ _board.blockAt(8).cellAt(7).value() }}</span></td>
-            <td class="cell"><span class="{{ _board.blockAt(8).cellAt(8).display() }}">{{ _board.blockAt(8).cellAt(8).value() }}</span></td>
+            <td class="cell" (click)="fill(8, 6)"><span class="{{ display(8, 6) }}">{{ value(8, 6) }}</span></td>
+            <td class="cell" (click)="fill(8, 7)"><span class="{{ display(8, 7) }}">{{ value(8, 7) }}</span></td>
+            <td class="cell" (click)="fill(8, 8)"><span class="{{ display(8, 8) }}">{{ value(8, 8) }}</span></td>
           </tr>
         </table>
       </td>
@@ -191,15 +191,15 @@
       <td>
         <table>
           <tr>
-            <td><span class="input-value {{ _unusedCounts[0].display() }}">1<sub class="unsolved">{{ _unusedCounts[0].count() }}</sub></span></td>
-            <td><span class="input-value {{ _unusedCounts[1].display() }}">2<sub class="unsolved">{{ _unusedCounts[1].count() }}</sub></span></td>
-            <td><span class="input-value {{ _unusedCounts[2].display() }}">3<sub class="unsolved">{{ _unusedCounts[2].count() }}</sub></span></td>
-            <td><span class="input-value {{ _unusedCounts[3].display() }}">4<sub class="unsolved">{{ _unusedCounts[3].count() }}</sub></span></td>
-            <td><span class="input-value {{ _unusedCounts[4].display() }}">5<sub class="unsolved">{{ _unusedCounts[4].count() }}</sub></span></td>
-            <td><span class="input-value {{ _unusedCounts[5].display() }}">6<sub class="unsolved">{{ _unusedCounts[5].count() }}</sub></span></td>
-            <td><span class="input-value {{ _unusedCounts[6].display() }}">7<sub class="unsolved">{{ _unusedCounts[6].count() }}</sub></span></td>
-            <td><span class="input-value {{ _unusedCounts[7].display() }}">8<sub class="unsolved">{{ _unusedCounts[7].count() }}</sub></span></td>
-            <td><span class="input-value {{ _unusedCounts[8].display() }}">9<sub class="unsolved">{{ _unusedCounts[8].count() }}</sub></span></td>
+            <td><span (click)="select(1)" class="input-value {{ _unusedCounts[0].display() }}">1<sub class="unsolved">{{ _unusedCounts[0].count() }}</sub></span></td>
+            <td><span (click)="select(2)" class="input-value {{ _unusedCounts[1].display() }}">2<sub class="unsolved">{{ _unusedCounts[1].count() }}</sub></span></td>
+            <td><span (click)="select(3)" class="input-value {{ _unusedCounts[2].display() }}">3<sub class="unsolved">{{ _unusedCounts[2].count() }}</sub></span></td>
+            <td><span (click)="select(4)" class="input-value {{ _unusedCounts[3].display() }}">4<sub class="unsolved">{{ _unusedCounts[3].count() }}</sub></span></td>
+            <td><span (click)="select(5)" class="input-value {{ _unusedCounts[4].display() }}">5<sub class="unsolved">{{ _unusedCounts[4].count() }}</sub></span></td>
+            <td><span (click)="select(6)" class="input-value {{ _unusedCounts[5].display() }}">6<sub class="unsolved">{{ _unusedCounts[5].count() }}</sub></span></td>
+            <td><span (click)="select(7)" class="input-value {{ _unusedCounts[6].display() }}">7<sub class="unsolved">{{ _unusedCounts[6].count() }}</sub></span></td>
+            <td><span (click)="select(8)" class="input-value {{ _unusedCounts[7].display() }}">8<sub class="unsolved">{{ _unusedCounts[7].count() }}</sub></span></td>
+            <td><span (click)="select(9)" class="input-value {{ _unusedCounts[8].display() }}">9<sub class="unsolved">{{ _unusedCounts[8].count() }}</sub></span></td>
           </tr>
         </table>
     </tr>
