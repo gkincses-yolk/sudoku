@@ -18,8 +18,8 @@ export class SudokuService {
   private readonly _emptyBlock: IBlock = new Block(0, Array(9).fill(this._emptyCell));
   private readonly _emptyBoard: IBoard = new Board(Array(9).fill(this._emptyBlock));
 
-  async getBoard() {
-    const response = await fetch(this._url);
+  async getBoard(boardIx: number) {
+    const response = await fetch(this._url + '/' + boardIx);
     if (!response.ok) {
       console.log(`Failed to fetch board: ${response.status}`);
       return this._emptyBoard;
@@ -54,11 +54,11 @@ export class SudokuService {
     return board ?? this._emptyBoard;
   }
 
-  async fillCell(blockIx: number, cellIx: number, value: number) {
-    console.log(`fill ${blockIx}:${cellIx} - ${value}`);
+  async fillCell(boardIx: number, blockIx: number, cellIx: number, value: number) {
+    console.log(`fill ${boardIx}:${blockIx}:${cellIx} - ${value}`);
     const dto = new FillCellDto(blockIx, cellIx, value);
     console.log(`dto: ${JSON.stringify(dto)}`);
-    const response = await fetch(this._url, {
+    const response = await fetch(this._url + '/' + boardIx, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(dto)

@@ -21,7 +21,7 @@ export class UnusedCounterService {
     for (let ix = 0; ix < 9; ix++) {
       unusedCounts[ix] = new Unused(9 - usedCounts[ix]);
     }
-    console.log(`Unused counts: ${JSON.stringify(unusedCounts.map(value => value.count()))}`);
+    console.log(`Unused counts: ${JSON.stringify(unusedCounts.map(unused => unused.count()))}`);
     return unusedCounts;
   }
 }

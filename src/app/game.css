@@ -75,6 +75,7 @@ span {
     font-size: 56px;
     continue: overflow;
     display: inline-block;
+    border: 0;
 }
 .selected {
     color: white;

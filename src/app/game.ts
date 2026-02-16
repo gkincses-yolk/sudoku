@@ -25,6 +25,7 @@ export class Game {
   private readonly unusedCounterService: UnusedCounterService = inject(UnusedCounterService);
   private readonly highlightCellsService: HighlightCellsService = inject(HighlightCellsService);
 
+  private _boardIx = 0;
   private _ix = 0;
 
   _block: IBlock = new Block(this._ix++, Array(9).fill(new Cell("", true)));
@@ -34,11 +35,11 @@ export class Game {
   private _selectedNumber: number = 0;
 
   constructor() {
-    this.updateBoard();
+    this.updateBoard(this._boardIx);
   }
 
-  updateBoard(): void {
-    this.sudokuService.getBoard()
+  updateBoard(boardIx: number): void {
+    this.sudokuService.getBoard(boardIx)
         .then((board: IBoard) => {
           this._board = board;
           console.log(`Updating ${JSON.stringify(board)}`);
@@ -81,8 +82,8 @@ export class Game {
     if (this._selectedNumber === 0) {
       return false;
     }
-    this.sudokuService.fillCell(blockIx, cellIx, this._selectedNumber).then(() => {
-      this.updateBoard();
+    this.sudokuService.fillCell(this._boardIx, blockIx, cellIx, this._selectedNumber).then(() => {
+      this.updateBoard(this._boardIx);
       return true;
     });
     return true;
