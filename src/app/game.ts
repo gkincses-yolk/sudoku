@@ -41,6 +41,7 @@ export class Game {
     this.sudokuService.getBoard()
         .then((board: IBoard) => {
           this._board = board;
+          console.log(`Updating ${JSON.stringify(board)}`);
           this._unusedCounts = this.unusedCounterService.countUnusedNumbers(this._board);
           this.markSelected(this._selectedNumber);
           this.changeDetectorRef.markForCheck();
@@ -80,17 +81,22 @@ export class Game {
     if (this._selectedNumber === 0) {
       return false;
     }
-    if (this.sudokuService.fillCell(blockIx, cellIx)) {
+    this.sudokuService.fillCell(blockIx, cellIx, this._selectedNumber).then(() => {
       this.updateBoard();
       return true;
-    } else {
-      this._board.blockAt(blockIx).cellAt(cellIx).setError();
-      setTimeout(() => {
-        this._board.blockAt(blockIx).cellAt(cellIx).clearError();
-        this.updateBoard();
-      }, 1000);
-      return false;
-    }
+    });
+    return true;
+  //   if () {
+  //     this.updateBoard();
+  //     return true;
+  //   } else {
+  //     this._board.blockAt(blockIx).cellAt(cellIx).setError();
+  //     setTimeout(() => {
+  //       this._board.blockAt(blockIx).cellAt(cellIx).clearError();
+  //       this.updateBoard();
+  //     }, 1000);
+  //     return false;
+  //   }
   }
 
   display(blockIx: number, cellIx: number): string {

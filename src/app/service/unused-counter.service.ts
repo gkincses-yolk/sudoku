@@ -10,6 +10,7 @@ import {Injectable} from "@angular/core";
 export class UnusedCounterService {
   countUnusedNumbers(board: IBoard): IUnused[] {
     let usedCounts: number[] = Array(9).fill(0);
+    console.log(`attempting to count unuseds: ${JSON.stringify(board)}`);
     board.blocks().forEach((block) => {
       block.cells().forEach((cell) => {
         ++usedCounts[+cell.value() - 1];
